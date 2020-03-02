@@ -1,0 +1,30 @@
+@import '../../../../Sass/main.scss';
+
+.Input{
+
+@include formBox;
+}
+
+input{
+ @include formElement; 
+}
+
+.Rounded{
+border-radius: 1rem;
+}
+
+.BoxShadow{
+ @include boxShadow(.2rem, .5rem, $color-grey);
+}
+.Label{
+    text-align: start;
+    display: flex;
+    font-size: 1.5rem;
+}
+
+.Invalid{
+    @include invalidInput;
+}
+.Valid{
+    @include border(.1rem, $color-green);
+}

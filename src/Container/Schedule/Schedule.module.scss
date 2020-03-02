@@ -1,0 +1,20 @@
+@import '../../Sass/main.scss';
+
+
+
+.ScheduleIcon{
+    margin-top: 2rem;
+   
+}
+
+.Heading{
+       padding: 1rem 0;
+    
+     @include boxShadow(.3rem, .5rem, $color-grey);
+      margin: 0 auto;
+        text-align: center;
+        font-weight: bold;
+        background-color: $color-white;
+        
+    }
+

@@ -1,0 +1,26 @@
+@import '../../../Sass/main.scss';
+
+.ScheduleStart{
+    text-align: center;
+    color: $color-blue; 
+    height: 100vh;
+    width: 100%;
+    font-weight: bold;
+@include flexCenter;
+    h1{
+padding-bottom: 2rem;
+    }
+}
+
+.ScheduleItems{
+    
+    h1{
+        font-size: 5rem;
+    }
+}
+
+.Row{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 2rem;
+}

@@ -1,0 +1,59 @@
+@import '../../../Sass/main.scss';
+
+.SideDrawer{
+
+    z-index: 200;
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+   
+    display: block;
+   background-color: $color-white;
+    box-sizing: border-box;
+    transition: transform .5s ease-in-out;
+    
+
+   overflow-y: overlay;
+}
+
+.DrawerBanner{
+    width: 100%;
+padding: 3rem;
+    margin-bottom: 1rem;
+    color: $color-white;
+background-color: $color-darkGrey;
+}
+
+.hide{
+
+ animation: slide;
+  transform: translateX(-100%);
+}
+
+
+@media(max-width: 1024px){
+    .SideDrawer{
+       
+    }
+}
+@keyframes slide {
+
+0%{
+    opacity: 1;
+  }
+
+  100%{
+    opacity: 0;
+    display: none;
+  }
+
+  
+}
+
+
+
+.ContentText{
+    padding-left: 2rem;
+}
+

@@ -1,0 +1,45 @@
+
+export const START_TASK = 'START_TASK '
+export const TASK_SUCCESS = 'TASK_SUCCESS '
+export const TASK_FAILED = 'TASK_FAILED'
+
+
+export const GET_TASK_START = 'GET_TASK_START'
+export const GET_TASK = 'GET_TASK'
+export const GET_TASK_SUCCESS = 'GET_TASK_SUCCESS'
+export const GET_TASK_FAILED = 'GET_TASK_FAILED'
+
+export const GET_TASK_ID = 'GET_TASK_ID'
+export const POPULATE_TASK_INPUT = 'POPULATE_TASK_INPUT'
+export const GET_TASK_ID_START = 'GET_TASK_ID_START'
+export const GET_TASK_ID_FAILED = 'GET_TASK_ID_FAILED'
+
+
+
+export const UPDATE_TASK_START = 'UPDATE_TASK_START'
+export const UPDATE_TASK = 'UPDATE_TASK'
+export const UPDATE_TASK_SUCCESS = 'UPDATE_TASK_SUCCESS'
+export const UPDATE_TASK_FAILED = 'UPDATE_TASK_FAILED'
+
+
+export const DELETE_TASK_START = 'DELETE_TASK_START'
+export const DELETE_TASK = 'DELETE_TASK'
+export const DELETE_TASK_SUCCESS = 'DELETE_TASK_SUCCESS'
+export const DELETE_TASK_FAILED = 'DELETE_TASK_FAILED'
+
+
+export const UPDATE_DATE = 'UPDATE_DATE'
+
+export const AUTH_START = 'AUTH_START'
+export const AUTH = 'AUTH'
+export const AUTH_SUCCESS = 'AUTH_SUCCESS'
+export const AUTH_FAILED = 'AUTH_FAILED'
+
+export const SET_REDIRECT_PATH = "SET_REDIRECT_PATH";
+export const AUTH_LOGOUT = "AUTH_LOGOUT";
+
+export const TOGGLE_SIDE_DRAWER = 'TOGGLE_SIDE_DRAWER'
+
+
+
+

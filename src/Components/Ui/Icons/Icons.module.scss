@@ -1,0 +1,47 @@
+@import '../../../Sass/main.scss';
+
+.FontAwesomeIcon{
+margin: 0 auto;
+cursor: pointer;
+transition: all .3s ease-in-out;
+color: transparent;
+
+&:hover{
+    opacity: .8;
+}
+}
+
+.xs{
+font-size: 1rem;
+}
+
+.sm{
+font-size: 2rem;
+}
+
+.md{
+    font-size: 3rem;
+}
+
+.lg{
+    font-size: 4rem;
+}
+
+.blue{
+color: $color-blue;
+}
+.green{
+color: $color-green;
+}
+.white{
+color: $color-white;
+}
+.darkGrey{
+color: $color-darkGrey;
+}
+
+.left{
+    display: flex;
+    align-self: center;
+    justify-self: left;
+}

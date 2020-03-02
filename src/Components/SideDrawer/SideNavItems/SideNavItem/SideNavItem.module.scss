@@ -1,0 +1,36 @@
+@import '../../../../Sass/main.scss';
+
+.SideNavItem{
+
+ list-style: none;
+padding: 0;
+display: flex;
+justify-content: flex-start;
+padding: 2rem  1rem;
+
+
+&:not(:last-child){
+
+
+}
+
+a{
+color: $color-darkGrey;
+text-decoration: none;
+
+&:hover,&:active{
+  
+    outline: none;
+    color: $color-grey;
+}
+}
+}
+
+@media(max-width: 1024px){
+    .SideNavItem{
+font-size: 2rem;
+    }
+    
+}
+
+

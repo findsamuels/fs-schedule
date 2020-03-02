@@ -1,0 +1,48 @@
+
+
+@mixin gradientBackground($color1, $color2){
+background-image: linear-gradient(90deg, $color1, $color2);
+}
+
+@mixin boxShadow($verticalSize, $blurSize, $color){
+    box-shadow: 0 $verticalSize $blurSize 0 $color;
+}
+
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin border($size,$color) {
+border: $size solid $color ;
+}
+@mixin borderBottom($size,$color) {
+border-bottom: $size solid $color ;
+}
+
+@mixin formBox{
+margin: 0 auto;
+width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+    margin: 1rem 0;
+      @include boxShadow(.3rem, .5rem, $color-grey);
+}
+@mixin formElement{
+  outline: none;
+    @include border(.1rem, $color-grey);
+    background-color: $color-white;
+  color: $color-darkGrey;
+    font: inherit;
+
+    display: block;
+    width: 100%;
+ 
+}
+
+@mixin invalidInput {
+  @include border(.1rem, $color-red);
+  
+}
+

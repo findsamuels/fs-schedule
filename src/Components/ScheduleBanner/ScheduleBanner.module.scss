@@ -1,0 +1,36 @@
+@import '../../Sass/main.scss';
+
+
+
+.ScheduleBanner{
+background-color: $color-darkGrey;
+text-align: center;
+@include boxShadow(.1rem, .2rem, $color-black);
+z-index: 198;
+position: fixed;
+width: 100%;
+top: 0;
+
+    
+}
+
+.BannerRow{
+    display: flex;
+    justify-content: space-between;
+align-items: center;
+padding: 1rem 0;
+}
+
+.BannerIcon{
+
+    
+}
+
+.BannerLogo{
+    font-size: 2rem;
+    color: $color-white;
+}
+
+
+
+

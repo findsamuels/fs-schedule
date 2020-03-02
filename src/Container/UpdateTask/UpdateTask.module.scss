@@ -1,0 +1,45 @@
+@import '../../Sass/main.scss';
+
+.UpdateTask{
+
+
+}
+
+.Input{
+@include formBox;
+}
+
+input{
+ @include formElement; 
+}
+
+.select{
+     @include formElement; 
+    
+    option{
+        
+         border-radius: 1rem !important;
+    }
+}
+.Heading{
+       padding: 1rem 0;
+     @include boxShadow(.3rem, .5rem, $color-grey);
+      margin: 0 auto;
+        text-align: center;
+        font-weight: bold;
+        background-color: $color-white;
+        
+    }
+
+.Rounded{
+border-radius: 1rem;
+}
+
+.BoxShadow{
+ @include boxShadow(.2rem, .5rem, $color-black);
+}
+.Label{
+    text-align: start;
+    display: flex;
+    font-size: 1.5rem;
+}

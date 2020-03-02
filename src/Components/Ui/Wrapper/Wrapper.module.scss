@@ -1,0 +1,34 @@
+@import '../../../Sass/main.scss';
+
+.Wrapper{
+text-align: center;
+   
+   width: 50%;
+   margin: 0 auto;
+   padding: 2rem;
+}
+
+
+@media (max-width: 998px){
+    .Wrapper{
+         margin: 0 auto;
+    width: 100%;
+   
+}
+}
+
+.md{
+width: 75%;
+}
+.lg{
+width: 100%;
+}
+.sm{
+width: 50%;
+}
+.margin{
+    margin: 10rem auto;
+}
+.boxShadow{
+ @include boxShadow(.2rem, .5rem, $color-black);
+}

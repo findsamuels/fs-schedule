@@ -1,0 +1,22 @@
+@import '../../../../Sass/main.scss';
+
+.Select{
+
+@include formBox;
+}
+
+select{
+     @include formElement; 
+    
+    option{
+        
+         border-radius: 1rem !important;
+    }
+}
+
+.Rounded{
+border-radius: 1rem;
+}
+.BoxShadow{
+ @include boxShadow(.2rem, .5rem, $color-black);
+}
