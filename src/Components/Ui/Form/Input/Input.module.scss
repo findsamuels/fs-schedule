@@ -25,6 +25,3 @@ border-radius: 1rem;
 .Invalid{
     @include invalidInput;
 }
-.Valid{
-    @include border(.1rem, $color-green);
-}

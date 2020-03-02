@@ -7,7 +7,7 @@ if(!props.invalid){
     inputClass = [
         classes.Input,
         classes[props.styles],
-        classes.Valid
+      
     ];
 }
 

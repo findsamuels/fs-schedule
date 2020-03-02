@@ -9,7 +9,7 @@ background: transparent;
     font-weight: bold;
     color: $color-white;
     margin: 0 auto;
-@include boxShadow(.3rem, .3rem, $color-darkGrey);
+@include boxShadow(.3rem, .5rem, $color-grey);
      transition: all .3s ease-in-out;
     
     &:hover{
@@ -49,7 +49,7 @@ border: none;
     &:hover{
 background-color: $color-white;
  color: $color-green;
-@include boxShadow(.1rem, .1rem, $color-darkGrey);
+@include boxShadow(.1rem, .2rem, $color-grey);
     }
 }
 
@@ -61,7 +61,7 @@ background-color: $color-white;
     &:hover{
 background-color: $color-white;
  color: $color-darkGrey;
-@include boxShadow(.1rem, .1rem, $color-darkGrey);
+@include boxShadow(.1rem, .2rem, $color-grey);
     }
 }
 
@@ -72,7 +72,7 @@ background-color: $color-white;
 
     &:hover{
 background-color: $color-blue;
-@include boxShadow(.1rem, .1rem, $color-darkGrey);
+@include boxShadow(.1rem, .2rem, $color-grey);
   color: $color-white;
     }
 }
@@ -85,7 +85,7 @@ background-color: $color-blue;
     &:hover{
 background-color: $color-white;
  color: $color-blue;
-@include boxShadow(.1rem, .1rem, $color-darkGrey);
+@include boxShadow(.1rem, .2rem, $color-grey);
     }
 }
 
@@ -95,7 +95,7 @@ background-color: $color-white;
 
     &:hover{
 background-color: $color-darkGrey;
-@include boxShadow(.1rem, .1rem, $color-darkGrey);
+@include boxShadow(.1rem, .2rem, $color-grey);
   color: $color-white;
     }
 }
@@ -106,7 +106,7 @@ background-color: $color-darkGrey;
 
     &:hover{
 background-color: $color-green;
-@include boxShadow(.1rem, .1rem, $color-darkGrey);
+@include boxShadow(.1rem, .2rem, $color-grey);
  color: $color-white;
     }
 }
