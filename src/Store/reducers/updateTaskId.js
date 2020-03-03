@@ -14,10 +14,18 @@ loading: true,
     })
 }
 
+
+
 const updateTaskSuccess = (state) => {
     return utilityObject(state, {
         loading: false,
         taskUpdated: true
+    })
+}
+const resetRedirect = (state) => {
+    return utilityObject(state, {
+        taskUpdated: false
+
     })
 }
 
@@ -36,7 +44,8 @@ export const updateTaskReducer = (state = initialState, action) => {
             return updateTaskSuccess(state)
         case actionTypes.UPDATE_TASK_FAILED:
             return updateTaskFailed(state)
-            
+            case actionTypes.RESET_REDIRECT:
+            return resetRedirect(state)
         default:
             return state
     }

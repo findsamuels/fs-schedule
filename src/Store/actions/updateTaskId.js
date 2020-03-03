@@ -19,6 +19,12 @@ type: actionTypes.UPDATE_TASK_SUCCESS
     }
 }
 
+export const resetRedirect = () => {
+    return {
+        type: actionTypes.RESET_REDIRECT
+    }
+}
+
 export const updateTaskFailed = () => {
     return {
 type: actionTypes.UPDATE_TASK_FAILED
@@ -40,7 +46,7 @@ export const updateTask = (updatedFormData, taskId) => {
             .then(res => {
 
                 dispatch(updateTaskSuccess())
-                console.log(res.data)
+               
                 console.log('iD:' + taskId)
             })
             .catch(error => {

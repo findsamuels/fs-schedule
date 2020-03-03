@@ -38,7 +38,7 @@ return dispatch => {
     .then(res => {
         dispatch(getTaskSuccess(res.data))
         dispatch(updateDate())
-        console.log(res.data)
+        
     })
     .catch(err => {
         dispatch(getTaskFailed(err))

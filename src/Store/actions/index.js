@@ -11,14 +11,16 @@ getTaskSuccess
 
 export {
 getTaskId,
-populateTaskInput
+populateTaskInput,
+resetListRedirect
 }from './getTaskId'
 
 export {
 updateTask,
 updateTaskStart,
 updateTaskFailed,
-updateTaskSuccess
+updateTaskSuccess,
+resetRedirect
 }from './updateTaskId'
 
 export {

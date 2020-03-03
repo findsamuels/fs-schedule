@@ -5,11 +5,13 @@ import Wrapper from '../../../Components/Ui/Wrapper/Wrapper'
 import ErrorBoundry from '../../../Hoc/ErrorBoundry/ErrorBoundry'
 import   { connect } from 'react-redux'
 import * as actionCreators from '../../../Store/actions/index'
+import { Redirect } from 'react-router-dom'
+import UpdateTask from '../../UpdateTask/UpdateTask'
 class SelectedList extends Component {
 
  componentDidMount() {
      this.props.onGetTask(this.props.token, this.props.userId)
-     
+   
          this.setState({
              formArray: this.props.filteredTaskData,
              taskData: this.props.taskData
@@ -17,7 +19,11 @@ class SelectedList extends Component {
      
      
     }
+componentWillUnmount(){
+    this.props.onResetRedirect()
+}
    
+
 
 state = {
 
@@ -54,9 +60,12 @@ state = {
 
 
 
-        this.props.history.push("/updateTask" )
+        
+          
 
-        console.log("/updateTask+" + taskId)
+        
+            
+        
     }
 
     deleteTaskHandler = (taskArray, taskId) => {
@@ -64,14 +73,17 @@ state = {
         this.setState({
             taskArray: taskArray
         })
-        console.log(taskArray)
+       
         
         
     }
     render(){
-
-     
+        let redirectToUpdateTask = ''
+    
+        if (this.props.taskToUpDateAdded) {
+            redirectToUpdateTask =  <Redirect to="/updateTask" component={UpdateTask} />
        
+        }
         
         let taskArray = []
 
@@ -88,13 +100,13 @@ state = {
 
         if (this.props.taskNotRetrieved) {
             showTasks = <Wrapper spacing='margin' styles='boxShadow'><p>loading...</p></Wrapper>
-            console.log(this.props.taskNotRetrieved)
+            
         }
 
        else {
            
            if (!this.props.success) {
-               console.log(this.props.taskNotRetrieved)
+               
                for (let taskList in this.props.taskData) {
                    taskArray.push({
                        id: taskList,
@@ -170,6 +182,7 @@ state = {
         return (
             <ErrorBoundry>
                 <Wrapper spacing='margin'>
+                    {redirectToUpdateTask}
                     {showTasks}
                 </Wrapper>
             </ErrorBoundry>
@@ -189,7 +202,8 @@ const mapStateToProps = state => {
         success: state.deleteTask.success,
        taskNotAdded: state.addTask.loading,
        token: state.authReducer.token,
-        userId: state.authReducer.userId
+        userId: state.authReducer.userId,
+        taskToUpDateAdded: state.updateTask.taskToUpDateAdded
 
     }
 }
@@ -198,7 +212,8 @@ const mapDispatchToProps = dispatch => {
     return {
         onGetTask: (token, userId) => dispatch(actionCreators.getTask(token, userId)),
         onGetTaskId: (taskId) => dispatch(actionCreators.getTaskId(taskId)),
-        onDeleteTask: (taskArray, taskId) => dispatch(actionCreators.deleteTask(taskArray, taskId))
+        onDeleteTask: (taskArray, taskId) => dispatch(actionCreators.deleteTask(taskArray, taskId)),
+        onResetRedirect: () => dispatch(actionCreators.resetRedirect())
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(SelectedList) 

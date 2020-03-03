@@ -17,7 +17,7 @@ const getTaskStart = (state, action) => {
 }
 
 const taskSuccess = (state, action) => {
-    console.log(action.taskData)
+    
     return utilityObject(state, {
         
         taskData: action.taskData,
@@ -33,7 +33,7 @@ const getTaskFailed = (state, action) => {
     })
 }
 const updateDate = (state, action) => {
-    console.log(action.currentDate)
+    
     return utilityObject(state, {
         currentDate: action.currentDate
     })

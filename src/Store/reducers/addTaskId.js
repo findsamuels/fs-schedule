@@ -1,11 +1,13 @@
 import * as actionTypes from '../actions/actionTypes'
 import utilityObject from '../../Hoc/Utility/utility'
 
+
+
 const initialState = {
 newFormData: '',
     taskId: '',
     loading: true,
-    taskUpdated: false
+    taskToUpDateAdded: false
 }
 
 const getTaskIdStart = (state, action) => {
@@ -19,7 +21,14 @@ const populateTaskInput = (state, action) => {
         newFormData: action.newFormData,
         taskId: action.taskId,
         loading: false,
-        taskUpdated: true
+        taskToUpDateAdded: true
+
+    })
+}
+
+const resetListRedirect = (state) => {
+    return utilityObject(state, {     
+        taskToUpDateAdded: false
 
     })
 }
@@ -33,6 +42,8 @@ export const selectedTaskReducer =(state = initialState, action) => {
             return getTaskIdStart(state, action)
         case actionTypes.POPULATE_TASK_INPUT:
             return populateTaskInput(state, action)
+            case actionTypes.RESET_List_REDIRECT:
+            return resetListRedirect(state)
        
             
             

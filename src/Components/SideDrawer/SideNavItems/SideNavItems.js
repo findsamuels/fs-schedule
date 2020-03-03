@@ -33,13 +33,13 @@ render(){
             text: 'View Task',
             link: '/tasks'
         },
-        profile: {
-            icon: 'grin-beam',
-            color: 'white',
-            fontSize: 'sm',
-            text: 'Profile',
-            link: '/profile'
-        },
+        // profile: {
+        //     icon: 'grin-beam',
+        //     color: 'white',
+        //     fontSize: 'sm',
+        //     text: 'Profile',
+        //     link: '/profile'
+        // },
         logout: {
             icon: 'trash',
             color: 'white',

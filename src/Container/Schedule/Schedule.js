@@ -15,11 +15,6 @@ class Schedule extends Component {
 
   componentDidMount(){
 
-    let minimumdate = new Date()
-    console.log(minimumdate)
-
-    
-
   }
   state = {
     tasks: {
@@ -104,12 +99,6 @@ class Schedule extends Component {
 
   submitTask = (event) => {
 event.preventDefault()
-
-    // let date = this.state.tasks.date.value.getFullYear()
-
-    
-
-    console.log(this.state.tasks.time.value)
 
 const taskData = {
   taskName: this.state.taskName,

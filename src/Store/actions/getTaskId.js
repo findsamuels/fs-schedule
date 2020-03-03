@@ -11,6 +11,12 @@ export const getTaskIdStart = () => {
 
 }
 
+export const resetListRedirect = () => {
+    return {
+        type: actionTypes.RESET_List_REDIRECT
+    }
+}
+
 export const populateTaskInput = (newFormData, taskId) => {
     return{
         type: actionTypes.POPULATE_TASK_INPUT,
@@ -37,12 +43,11 @@ dispatch(getTaskIdStart())
         .then( res => {
 
             dispatch(populateTaskInput(res.data, taskId))
-            console.log(res.data, taskId)
-            console.log('iD:'+ taskId)
+            
         })
         .catch(error => {
             dispatch(getTaskIdFailed(error))
-            console.log(error)
+       
         })
     }
     

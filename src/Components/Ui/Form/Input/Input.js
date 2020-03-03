@@ -35,8 +35,9 @@ if(!props.invalid){
           className={inputClass.join(' ')}
           placeholder={props.placeholder}
           value={props.value}
-        //   invalid ={props.invalid}
+          
           type={props.type}
+       
          
 
         />

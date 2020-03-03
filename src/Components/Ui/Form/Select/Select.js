@@ -8,7 +8,7 @@ const select = (props) => {
         <select
           className={[classes.Select, classes[props.styles]].join(' ')}
           onChange={props.onChange}
-
+            value={props.value}
         >
           {props.children}
         </select>
