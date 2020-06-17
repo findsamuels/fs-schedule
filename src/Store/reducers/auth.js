@@ -12,20 +12,22 @@ const initialState = {
 const authStart = (state, action) =>{
 return utilityObject(state, {
   loading: true,
+    errorMessage: null,
 });
 }
 
 const authSuccess = (state, action) => {
   return utilityObject(state, {
     token: action.token,
-    userId: action.userId,
+      userId: action.userId,
     loading: false,
+      errorMessage: null,
   });
 };
 
 const authFailed = (state, action) => {
   return utilityObject(state, {
-   errorMessage: action.errorMessage,
+      errorMessage: action.errorMessage,
    loading: false,
   });
 };
@@ -39,7 +41,8 @@ const authFailed = (state, action) => {
 
 const setRedirectPath = (state, action) => {
   return utilityObject(state, {
-    path: action.path
+    path: action.path,
+      errorMessage: null,
   });
 }
 

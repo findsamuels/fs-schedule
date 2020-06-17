@@ -6,7 +6,7 @@ import utilityObject from '../../Hoc/Utility/utility'
 
 const initialState = {
     loading: false,
-taskData: null,
+taskData: [],
 currentDate: ''
 }
 
@@ -17,7 +17,14 @@ const getTaskStart = (state, action) => {
 }
 
 const taskSuccess = (state, action) => {
-    
+    // let myTaskData = action.taskData
+    //       let taskArray = []
+    //         for (let key in myTaskData) {
+    //             taskArray.push({
+    //                 ...myTaskData[key],
+    //                 id: key
+    //             })
+    //         }
     return utilityObject(state, {
         
         taskData: action.taskData,
@@ -33,7 +40,7 @@ const getTaskFailed = (state, action) => {
     })
 }
 const updateDate = (state, action) => {
-    
+     
     return utilityObject(state, {
         currentDate: action.currentDate
     })

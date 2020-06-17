@@ -3,17 +3,36 @@
 
 
 .Auth{
-
+width: 50%;
+margin: 0 auto;
+@include boxShadow(.3rem, .5rem, $color-grey);
+}
+@media(max-width: 768px){
+    .Auth{
+width: 100%;
+}
 }
 .ButtonDiv{
-display: block;
 
+display: flex;
+justify-content: space-around;
 margin-top: 2rem;
+}
+.AuthType{
+text-align: start;
+padding-top: 2rem;
+
+}
+.AuthTypeButton{
+    font-size: 2rem;
+    cursor: pointer;
+    color: $color-blue;
+    font-weight: bold;
 }
 
 .Heading{
        padding: 1rem 0;
-     @include boxShadow(.3rem, .5rem, $color-grey);
+    //  @include boxShadow(.3rem, .5rem, $color-grey);
       margin: 0 auto;
         text-align: center;
         font-weight: bold;
@@ -23,8 +42,6 @@ margin-top: 2rem;
 
     .ErrorMessage{
         text-align: center;
-
-     padding-top: 2rem;
 
         color: $color-red;
         font-weight: bold;

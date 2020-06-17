@@ -85,15 +85,7 @@ state = {
        
         }
         
-        let taskArray = []
-
-        
-       
-        if (this.props.success){
-            taskArray = this.props.filteredTaskData
-            
-        }
-
+  
 
         let showTasks = '';
         
@@ -104,23 +96,24 @@ state = {
         }
 
        else {
-           
-           if (!this.props.success) {
-               
-               for (let taskList in this.props.taskData) {
-                   taskArray.push({
-                       id: taskList,
-                       task: this.props.taskData[taskList]
-                   })
-                   
-                   
-               }
-           }
-        
-    
-            let sortedArray = taskArray.sort((a, b) => new Date(a.date) - new Date(b.date))
 
-            showTasks = sortedArray.map(showTask => {
+            let taskArray = []
+
+            for (let taskList in this.props.taskData) {
+                taskArray.push({
+                    id: taskList,
+                    task: this.props.taskData[taskList]
+                })
+
+
+
+            }
+            if (this.props.success) {
+                taskArray = this.props.filteredTaskData
+
+            }
+
+            showTasks = taskArray.map(showTask => {
 
 
                let checkClass = classes.ItemTask
@@ -131,7 +124,7 @@ state = {
 
                )
 
-               let updatedDate = showTask.task.date
+                let updatedDate = showTask.task.date
 
                let newDate = new Date(updatedDate)
                const months = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"];

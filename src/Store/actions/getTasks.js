@@ -31,14 +31,15 @@ return{
 export const getTask = (token, userId) => {
 return dispatch => {
     dispatch(getTaskStart())
-    // const queryParams =
+    //  const queryParams =
     //     '?auth=' + token + '&orderBy="userId"&equalTo="' + userId + '"';
+
     
-    axios.get('./task.json' )
+    axios.get('./task.json'  )
     .then(res => {
         dispatch(getTaskSuccess(res.data))
         dispatch(updateDate())
-        
+       
     })
     .catch(err => {
         dispatch(getTaskFailed(err))

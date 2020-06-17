@@ -9,11 +9,11 @@ background: transparent;
     font-weight: bold;
     color: $color-white;
     margin: 0 auto;
-@include boxShadow(.3rem, .5rem, $color-grey);
+
      transition: all .3s ease-in-out;
     
     &:hover{
-background-color: $color-blue;
+opacity: .8;
 
 
     }
@@ -59,8 +59,8 @@ background-color: $color-white;
  background-color: $color-darkGrey;
 
     &:hover{
-background-color: $color-white;
- color: $color-darkGrey;
+opacity: .8;
+ 
 @include boxShadow(.1rem, .2rem, $color-grey);
     }
 }

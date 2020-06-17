@@ -37,13 +37,11 @@ export const deleteTask = (taskArray, taskId) => {
             .then(res => {
 
                 dispatch(deleteTaskSuccess(taskArray, taskId))
-                console.log(res.data)
-                console.log('iD:' + taskId)
+              
             })
             .catch(error => {
                 dispatch(deleteTaskFailed(error))
-                console.log(error)
-                console.log('iD:' + taskId)
+             
             })
     }
 

@@ -19,12 +19,23 @@ const startTask = (state, action) => {
             taskAdded: true,
         })
     }
+    const taskToRemove = (state, action) => {
+        return utilityObject(state, {
+            loading: false,
+            taskAdded: false,
+        })
+    }
+
 
 switch (action.type) {
     case actionTypes.START_TASK:
         return startTask(state, action)
     case actionTypes.TASK_SUCCESS:
         return taskSuccess(state, action)
+        case actionTypes.TASK_TO_REMOVE:
+            return taskToRemove(state, action)
+
+
 
     default:
         return state

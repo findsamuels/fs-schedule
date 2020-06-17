@@ -64,7 +64,7 @@ export const auth = (email, password, shouldSignUp) => {
              password: password,
              returnSecureToken: true
            };
-console.log(shouldSignUp)
+
            let url =
              "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCkdQVoNu0YuD8Wltx349hFr_HabtqVjsk";
 
@@ -84,12 +84,11 @@ console.log(shouldSignUp)
                dispatch(authSuccess(res.data.idToken, res.data.localId));
                dispatch(setRedirectPath())
                dispatch(startAuthTimeout(res.data.expiresIn));
-               console.log(res.data);
-               console.log(res);
+               
              })
              .catch(err => {
-               dispatch(authFailed(err.res));
-                 console.log(err.res)
+               dispatch(authFailed(err.message));
+               
              });
          };
        };
@@ -108,6 +107,7 @@ console.log(shouldSignUp)
               if (expirationDate <= new Date()) {
                   dispatch(logout())
               }
+              
               else {
                   const userId = localStorage.getItem('userId')
                   dispatch(authSuccess(savedToken, userId))

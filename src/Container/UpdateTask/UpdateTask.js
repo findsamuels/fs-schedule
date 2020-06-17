@@ -29,6 +29,7 @@ componentWillUnmount(){
                 value: this.props.newFormData.date,
                 type: 'date',
                 min: new Date(),
+                label: 'What Date',
                 touched: false,
                 isValid: true
             },
@@ -36,6 +37,7 @@ componentWillUnmount(){
                 value: this.props.newFormData.time,
                 type: 'time',
                 touched: false,
+                label: 'What time',
                 isValid: true
             },
             toDo: {
@@ -43,13 +45,15 @@ componentWillUnmount(){
                 placeholder: 'What To Do',
                 type: 'text',
                 touched: false,
-                isValid: true
+                isValid: true,
+                maxlength: "35"
             },
             location: {
                 value: this.props.newFormData.location,
                 placeholder: 'Where',
                 type: 'text',
                 touched: false,
+                maxlength: "25",
                 isValid: true
             },
    
@@ -174,8 +178,10 @@ this.setState({
                         value={updatedInput.config.value}
                         type={updatedInput.config.type}
                         min={updatedInput.config.min}
+                        label={updatedInput.config.label}
                         invalid={!updatedInput.config.isValid}
                         touched={updatedInput.config.touched}
+                        maxlength={updatedInput.config.maxlength}
                         onChange={(event) => this.inputHandler(event, updatedInput.id)}
                     />
                 )

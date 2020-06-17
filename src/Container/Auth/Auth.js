@@ -21,6 +21,7 @@ email: {
     placeholder: 'Email',
     name: 'email',
     type: 'text',
+    label: 'Email',
     autocomplete: 'off',
                 isvalid: true,
 },
@@ -31,6 +32,7 @@ password: {
                 name: 'password',
                 type: 'password',
     autocomplete: 'new-password',
+    label: 'Password',
     touched: false,
     isvalid: true,
             }
@@ -56,25 +58,24 @@ password: {
        let errorMessage = ''
 let touched =  true
         let isvalid = true
-        console.log(isvalid)
+       
 
         let emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         switch (inputName) {
             case 'email':
               
                 if ( touched && !emailRegex.test(value)) {
-                    errorMessage = 'Invalid Email'
+                    
                     isvalid = false
                 }
-                console.log(errorMessage)
+               
                break;
             case 'password':
                 if (touched && value.length < 6) {
-                    errorMessage='Password too short!'
+                    
                     isvalid = false
                 }
-                console.log(errorMessage)
-                break;
+            break;
             default:
                 isvalid = true
                 break;
@@ -106,17 +107,19 @@ this.setState(prevState => {
         shouldSignUp: !prevState.shouldSignUp
     }
 })
-        console.log(this.state.shouldSignUp)
+       
         
     }
     
     submitUser = (event) => {
 event.preventDefault()
 
-        this.props.onAuthUser(this.state.authUser.email.value, this.state.authUser.password.value, this.state.shouldSignUp)
-        console.log(this.state.authUser.email.value)
-        console.log(this.state.authUser.password.value,)
-        this.props.onSetRedirectPath("/");
+    this.props.onAuthUser(this.state.authUser.email.value, this.state.authUser.password.value, this.state.shouldSignUp)
+
+
+    this.props.onSetRedirectPath("/");
+
+        
        
     }
 
@@ -128,9 +131,9 @@ event.preventDefault()
 
 
         let authTypeButton = this.state.shouldSignUp
-          ? "  SWITCH TO LOGIN"
-          : "SWITCH TO SIGNUP";
-        let authButton = this.state.shouldSignUp ? 'SIGNUP' : 'LOGIN'
+          ? "  Login"
+          : "Signup";
+        let authButton = this.state.shouldSignUp ? 'Signup' : 'Login'
 
         let userArray = []
         for(let user in this.state.authUser){
@@ -147,8 +150,9 @@ event.preventDefault()
                     name={returnUser.config.name}
                     touched={returnUser.config.touched}
                     invalid={!returnUser.config.isvalid}
+                    label={returnUser.config.label}
                     type={returnUser.config.type}
-                    autocomplete={returnUser.config.autocomplete}
+                    // autocomplete={returnUser.config.autocomplete}
                     onChange={(event) => this.onGetUserInfo(event, returnUser.id)}
                 />
             )
@@ -157,14 +161,19 @@ event.preventDefault()
         return(
             <Wrapper spacing='margin'>
                 {autoRedirect}
+                <h2 className={classes.Heading}>Simple and convinient task scheduling app</h2>
                 <div className={classes.Auth}>
+                    
                     <Form >
-                        <h2 className={classes.Heading}>SIGN IN OR REGISTER BELOW</h2>
+                        <h4 className={classes.Heading}>SIGN IN OR REGISTER BELOW</h4>
         <p className={classes.ErrorMessage}>{this.state.errorMessage}</p>
                         {returnUsers}
                         
-                          <Button  clicked={this.submitUser} display="Block" margin='margin-bottom'  color='green'>{authButton}</Button>
-                            <Button clicked={this.toggleAuthType} color='grey'>{authTypeButton}</Button>
+                            <Button clicked={this.submitUser} display='Block' color='grey'>{authButton}</Button>
+                           
+                        
+                        <p className={classes.AuthType} onClick={this.toggleAuthType}>Click here to to <span className={classes.AuthTypeButton}>{authTypeButton}</span></p>
+                          
                         
                     </Form>
                 </div>
@@ -178,6 +187,8 @@ event.preventDefault()
 const mapStateToProps = state => {
     return {
       auth: state.authReducer.token !== null,
+        
+      errorMessage: state.authReducer.errorMessage !== null,
       redirectPath: state.authReducer.path
     };
 }

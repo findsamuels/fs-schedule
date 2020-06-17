@@ -35,6 +35,7 @@ if(!props.invalid){
           className={inputClass.join(' ')}
           placeholder={props.placeholder}
           value={props.value}
+          defaultValue={props.defaultValue}
           
           type={props.type}
        

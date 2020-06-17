@@ -13,6 +13,12 @@ export const taskSuccess = () => {
     }
 }
 
+export const taskToRemove = () => {
+    return {
+        type: actionTypes.TASK_TO_REMOVE
+    }
+}
+
 
 export const postTask = (taskData) => {
     return dispatch => {
@@ -20,7 +26,7 @@ export const postTask = (taskData) => {
         axios.post('/task.json', taskData )
         
 .then( res => {
-    console.log(taskData)
+   
 dispatch(taskSuccess(res.data))
 })
 .catch(err => {

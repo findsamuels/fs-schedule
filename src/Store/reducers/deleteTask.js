@@ -24,7 +24,7 @@ const deleteTaskSuccess = (state, action) => {
         return filteredTask.id !== action.taskId
     })
     let SortedArray = filterTaskArray.sort((a, b) => new Date(a.date) - new Date(b.date))
-    console.log(filterTaskArray)
+   
     return utilityObject(state, {
         success: true,
         filteredTaskData: SortedArray

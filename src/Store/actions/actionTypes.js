@@ -8,7 +8,7 @@ export const GET_TASK_START = 'GET_TASK_START'
 export const GET_TASK = 'GET_TASK'
 export const GET_TASK_SUCCESS = 'GET_TASK_SUCCESS'
 export const GET_TASK_FAILED = 'GET_TASK_FAILED'
-
+export const TASK_TO_REMOVE = 'TASK_TO_REMOVE'
 export const GET_TASK_ID = 'GET_TASK_ID'
 export const POPULATE_TASK_INPUT = 'POPULATE_TASK_INPUT'
 export const GET_TASK_ID_START = 'GET_TASK_ID_START'

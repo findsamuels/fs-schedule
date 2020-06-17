@@ -13,8 +13,8 @@ import * as actionCreators from '../../Store/actions/index'
 import SelectedList from '../ScheduleList/SelectedList/SelectedList'
 class Schedule extends Component {
 
-  componentDidMount(){
-
+  componentWillUnmount(){
+      this.props.onRemoveTask()
   }
   state = {
     tasks: {
@@ -38,21 +38,21 @@ class Schedule extends Component {
       },
       date: {
         elementConfig: {
-          placeholder: "Date",
+         
           type: "date",
-          label: '',
-          min: new Date()
+          label: 'What date',
+              min: "20/03/2020"
         },
-        value: '',
+          value: " 2020-03-20" ,
         touched: false
       },
       time: {
         elementConfig: {
           placeholder: "What Time?",
           type: "time",
-          label: 'What Time?'
+          label: 'What time?'
         },
-        value: '',
+          value: "09:00",
         touched: false
       },
     },
@@ -106,6 +106,7 @@ const taskData = {
   location: this.state.tasks.location.value,
   date: this.state.tasks.date.value,
   time: this.state.tasks.time.value,
+  userId: this.props.userId
 
 }
 
@@ -115,7 +116,7 @@ this.props.onPostTasks(taskData)
   this.props.history.push("/")
     this.props.onGetTask()
    
-    console.log(this.state.tasks.date.value )
+
 
   };
 
@@ -135,6 +136,7 @@ reload = <Redirect to={'/tasks'} Component={SelectedList}/>
     }
     const scheduleInput = scheduleArray.map(schedule => (
       <Input
+            label={schedule.config.elementConfig.label}
         key={schedule.id}
         placeholder={schedule.config.elementConfig.placeholder}
         type={schedule.config.elementConfig.type}
@@ -182,7 +184,9 @@ reload = <Redirect to={'/tasks'} Component={SelectedList}/>
 const mapStateToProps = state => {
   return{
     currentDate: state.tasks.getTaskReducer,
-      taskAdded: state.addTask.taskAdded
+      taskAdded: state.addTask.taskAdded,
+      userId: state.authReducer.userId,
+      token: state.authReducer.token,
   }
 }
 
@@ -190,7 +194,8 @@ const mapDispatchToProps = dispatch => {
   return{
     onPostTasks: (taskData) => dispatch(actionCreators.postTask(taskData)),
     onPopulateTaskInput: (taskData, id) => dispatch(actionCreators.populateTaskInput(taskData, id)),
-    onGetTask: () => dispatch(actionCreators.getTask())
+     onGetTask: () => dispatch(actionCreators.getTask()),
+     onRemoveTask: () => dispatch(actionCreators.taskToRemove())
   }
 }
 export default connect(mapStateToProps,mapDispatchToProps)(Schedule)

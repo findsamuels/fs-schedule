@@ -47,12 +47,11 @@ export const updateTask = (updatedFormData, taskId) => {
 
                 dispatch(updateTaskSuccess())
                
-                console.log('iD:' + taskId)
+                
             })
             .catch(error => {
                 dispatch(updateTaskFailed(error))
-                console.log(error)
-                console.log('iD:' + taskId)
+                
             })
     }
 

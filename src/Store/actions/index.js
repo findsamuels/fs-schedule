@@ -1,7 +1,7 @@
 export {
 startTask,
 postTask,
-
+taskToRemove
 }from './addTask'
 
 export {
